@@ -1,0 +1,382 @@
+#Zana Osman
+#CS20
+#April 20th, 2021
+#Choose your own adventure!!
+
+#This is the start of the adveture story and gives the player an idea of what they will encounter
+print("Its the year 2037 after a devastating nuclear war the world population has dropped 80%. Only 150 Million people are still alive around the whole globe.")
+print(" ")
+print("You have heard before of a safe town to go to that has protection from the radiation and the infected. Only problem is it is on the other side of the country and walking would be no use as it would take 8 months to reach it")
+print(" ")
+print("With a nuclear winter heading your war the only option you have is to take your dog and travel to shelter or stay where you are and try to survive")
+print(" ")
+
+#This definition of the zombie attack leads you to no conclusion and both option or running or fighting lead t your death, it is defind so that it cant be used more then once
+def zombie_attack():
+    #This will determine your fate 
+    runaway_fight = input("You see a horde of zombies in the distance will you run or will you fight? (Run, Fight)")
+    #If you choose to run from the horde
+    if runaway_fight == "Run":
+        print(" ")
+        print("You succesfully gotten away be sure to fully equip yourself before fighting zombies")
+        print("After running down the block you see a flash that blinds you, 2 machine guns open fire and you find out you are the target")
+        print(" ")
+        print("Two bullets pierce your armor and you end up getting hit, after getting away you find out you will not be able to survive")
+        print("As the bleeding progresses your eyes lids slowly close as the light gets darker and darker")
+        print(" ")
+        print("You have bled out as a result of machine gun fire")
+        print("GAME OVER")
+    #If you choose to fight the horde
+    elif runaway_fight == "Fight":
+        print(" ")
+        print("As you approach a zombie you find there is a lot more then anticipated")
+        print("After taking out half of them you find out your ammo count is too low and you will not be able to fend them off.")
+        print("You take a hit to the left arm and are down to just your right arm, it comes down to 3 zombies left")
+        print("You shoot one zombie and hit the other one in the head. Down to just one")
+        print("You check the magazine and find out your out of bullets, as you look up the zombie smacks you across the face and sends you backward. As you land on your back your realize you have been finished and there is no way out of this")
+        print("GAME OVER")
+
+#This definition is one the many endings that can occur 
+def endgame_one():
+    print("You have been injured and can not get up, after becoming to weak you sit there and starve to death unable to move")
+    print("You have died")
+    print("GAME OVER")
+
+#This is the first good ending that is a definition, it can only be unlocked by leaving and not staying
+def endgame_two():
+    print("After reaching the border you notice a tall figure with a black vest some khaki pants and a Ak47 in there hands.")
+    print("As you get closer you start to realize it is another human")
+    print(" ")
+    print("'Hello there what can I do for you?'")
+    print(" ")
+    print("You have made it, the town welcomes you in and for the first time you find warm food, people and finaly feel safe")
+    print("The nuclear winter countinies to go on but having eachother back you persevere and survive")
+    print("It is now the year 2041, the world has found the cure and eradicated the virus, the nuclear winter has started to drift off and for the first time you see the sun bright as can be shining on your face")
+    print(" ")
+    print("You go back on to think about your choices, the choice of staying would have been dangerous but the road you took was more. After all it did pay off")
+    print("Congratulations! You have survived the nuclear winter and helped eradicate the virus!")
+
+#This is the second good ending and is also only unlocked by staying and not leaving
+def endgame_three():
+    print("The roof hatch slams open and as you climb out you hear a helicopter in the distance, you have heard before of a way to signal a helicopter using a knife and the sun")
+    print("With no sun avaible you proceed to light a fire that brightens the day")
+    print("The helicopter coming in closer and closer sees the fire, while swinging your arms up and down and holding a torch the fire was a success. The helicopter drops down a rope and as you cling on it pulls you up")
+    print(" ")
+    print("You have been saved by a team of mercenaries who were up to no good throughout there normal lives, however while talking you find out they have managed to change there ways and help the people")
+    print("Flying over the house you see the hordes of zombies edging towards the town border, gunshots light up the ground and as you watch from the helicopter you see a squad of men with 3 machine guns setup a tripod and mow down the zombies")
+    print("Congratulations! You have managed to find a group of people able to guard themselves and help you to surviving the harsh winter")
+
+#This is the start of the game where the user desides whether they want to stay or they want to leave and try to go find the protected town
+    
+#Throughout the code the variables used are exactly what the options are, this makes it a lot easier to find the problem and to have a more cleaner code
+#An example is at the choice of finding a gas can or driving to the station, the variables is station_jerry for the two option.
+choice1 = input("It is up to you to survive and reach the shelter in time where it is rumored a cure is being created. Will you take the first step to find a vehicle to travel in or will you stay and arm yourself. Would you like to stay or leave? (Stay, Leave) ")
+#The option to stay means that the user will have to use the resourcse only in the vicinity to help survive or find help
+if choice1 == "Stay":
+    print(" ")
+    print("Now that you have chosen to stay your mission is to survive long enough to have the rescueres come find you, at any point if you get bit by a zombie or breath in the nuclear smog it will decrease your chance of survival")
+    #Choice to find food or ammo
+    Weapons_Food = input("As you get back to your house you notice you are low on food and ammo, will you find food first or a magazine for your rifle. (Food, Ammo)")
+    #What will happen if chosen to find food
+    if Weapons_Food == "Food":
+        print(" ")
+        print("There is supposed to be some food still left in the supermarket, you have also heard that your neighbors have abandoned the city.")
+        #Choice to look in the neighbors house or in the supermarket
+        food_looking = input("Will you loot the supermarket or your neighbors? (Supermarket, Neighbors)")
+        #If supermarket is chosen
+        if food_looking == "Supermarket":
+            print(" ")
+            #Choice to choose between to aisles
+            which_aisle = input("While looking you cant help but notice that there is nothing left but two aisles, one with canned food and one with frozen food (Canned, Frozen)")
+            #If chosen to look in the canned aisle
+            if which_aisle == "Canned":
+                #This is a loop code which means that out of the two option only one will allow you to countinue, if you choose the code that will not break the loop it will keep on asking until you have chosen the right option
+                while True:
+                    print("You find a can of spam and three cans of diced tomatoes, not much but it will be enough for a few days")
+                    #Choice to go be rescued or not
+                    rescued_stay = input("You hear a motorcycle engine and can recall it is a Kawasaki Ninja, a fast versitile race bike, with only a door away from freedom will you stay or exit? (Stay, Exit)")
+                    #If stay is chosen
+                    if rescued_stay == "Stay":
+                        print(" ")
+                        print("You sure about that? I mean freedom is right there")
+                    #If exit is chosen
+                    elif rescued_stay == "Exit":
+                        print(" ")
+                        print("When exiting you are greeted by 3 motorcyclists who state they have been watching you ever since you went into the store")
+                        print("They ask you if you know any place that will trade foods for gasoline and oil, with no other human contact you give a long sigh and say no")
+                        print(" ")
+                        print("They offer you a spot in there ranks, a team of former ex military and air force specialists, you dont refuse and they take you to a place in the outskirts of the city, 3 big garages and a runway all sit next to there mini claimed land")
+                        print("You take in everything that has just happened and after spending a half a year with them you become one of the squad leaders of the savenging team")
+                        print(" ")
+                        print("After going on countless missions you find multiple more signs of human life, weapons, food, vehicles and even a tank, what an adventure")
+                        break
+            #If the frozen aisle is chosen
+            elif which_aisle == "Frozen":
+                print(" ")
+                print("You head over to the frozen section to find the freezer door open, as you walk inside you turn around and see the door close in on you")
+                print("The temperature guage read around -40 celsius, with only a few minutes you would start to develop hypothermia, using your gun you try to shoot the lock but the frost has already took a toll on your weapon")
+                print("You realize you have one option, light a grenade and blow the door open, with the freezer being too small the risk is too high")
+                print(" ")
+                print("You sit there freezing and screaming in pain only to see a face appear at the window, a masked figure peaks inside and watches for 30 seconds staring into your soul before proceeding to leave you there for the dead")
+                print("You have died to hypothermia")
+                print("GAME OVER")
+        #If te neighbors house is chosen
+        elif food_looking == "Neighbors":
+            #Choice to check where to look for food
+            freezer_fridge = input("You hed over to your neighbors and find two things to look into, the fridge or the pantry (Fridge, Pantry)")
+            #If fridge is chosen to check for food                
+            if freezer_fridge == "Fridge":
+                print(" ")
+                print("You check inside and take the carton of milk, three sips in and a foul smell eruptes from the jug. After checking the date you realize how old it is, 6 and a half months")
+                print("You have suffered from expiried milk")
+                print("GAME OVER")
+            #If the pantry is chosen
+            elif freezer_fridge == "Pantry":
+                print(" ")
+                print("You take a quick look inside and hear a siren go off")
+                print("It sounds familar but you dont recognize it off first sound")
+                print("Then it hits you the bomb siren has just gone off, as you hear the b16 approach all you can do is just sit there and pray it does not drop the bomb on you")
+                print(" ")
+                print("As it passes by you thank god for saving you, until it hits the ground")
+                print("You have been decintigrated by a atomic bomb leaving everything in a 50 kilometres radius flatened, there really was nothing you could do")
+                print("GAME OVER")
+    #If the choice to find ammo is chosen
+    elif Weapons_Food == "Ammo":
+        print(" ")
+        print("The police station might have some ammo left from the guard, it is best to take the roof tops but the main road works too.")
+        #Input to either go on the roof tops or the main road
+        ammo_hunting = input("Would you like to jump the rooftops or take the main road? (Roof, Road)")
+        #If the roof option is chosen
+        if ammo_hunting == "Roof":
+            print(" ")
+            print("You see a ladder that leads to the roof of a building, the space between each building is a small distance and easy to jump. You make it to the police station after doing some Assassins Creed on the roof and find the door a bit cracked open. You hear a zombie wandering around and have two choices")
+            #Input on what to do to the zombie
+            shoot_baton = input("Do you go for the head with a baton or shoot it, shooting it may cause other zombies to here and might give your location away however the baton my not kill it on the first strike. (Shoot, Baton)")
+            #What will happen if you decide to shoot
+            if shoot_baton == "Shoot":
+                print(" ")
+                print("One shot, one kill")
+                print("As you leave the station you look down at your radation scale and realize it has skyrocketed, as you put on your mask you see a dark figure out in the distance")
+                #Loop to keep user to only choose one input
+                while True:
+                    #Input for choice to shoot or not
+                    deathzone = input("Your first instinct is to shoot as it might be a zombie, but it could also be a human (Snipe, Resist)")
+                    #If choice to shoot is chosen
+                    if deathzone == "Snipe":
+                        print(" ")
+                        print("Two shots pop in the air and you realize it was infact a zombie")
+                        zombie_attack()
+                        break
+                    #If resisting is chosen
+                    elif deathzone == "Resist":
+                        print(" ")
+                        print("Are you sure you shoudnt shoot?")
+            #If using the baton is choosen
+            elif shoot_baton == "Baton":
+                print(" ")
+                print("You take one swing and manage to kill the zombie, as you look around you find an m4a1-s in the gun safe, in it is two magazines. Although your gun the M1 Garand, a bolt action hunting rifle, has a lot more bullets")
+                #Choice to change weapons
+                auto_bolt = input("Your choice to choose (M4A1, M1)")
+                #If the M4 is chosen
+                if auto_bolt == "M4A1":
+                    print(" ")
+                    endgame_three()
+                #If the M1 is chosen
+                elif auto_bolt == "M1":
+                    print(" ")
+                    print("You look back wondering if you made the right choice but trust your gut, as you hid outside you start to wander back down the street")
+                    print("You feel a sharp pain in your lungs and struggle to breath, as you get away you realize you have just inhaled nuclear dust, dangerous and deadly")
+                    print("With no way of saving yourself you start to cough blood, black blood. This can only mean a system failure")
+                    print(" ")
+                    print("You have died from nuclear dust as you struggled to save yourself")
+                    print("GAME OVER")
+        #If the road was chosen
+        elif ammo_hunting == "Road":
+            print("Great choice, the main road may have some extra loot on the way!")
+            #Input to either loot or go
+            looting1 = input("You have found a car with what looks to be some food inside, would you like to loot it or keep going. (Loot, Go)")
+            #What will happen if you loot
+            if looting1 == "Loot":
+                print(" ")
+                print("You look inside and see an armed c4, a voice shouts at you to drop everything or they will set it off, as you look back you see a man with a G18 pistol, an automatic.")
+                print("A lot faster then your gun and it can do some serious damage")
+                print("As soon as you drop your stuff and surrender he quickly runs over and takes your weapon and bag leaving you right there by the c4")
+                print(" ")
+                print("Still pinned down by him he laughs and sits it off")
+                print("It does not instantly kill you and you manage to grab your pistol behind your back and shoot 2 shots, the man drops down to the floor bleeding out")
+                print("You look back at the car only to have it explode finishing you both off")
+                print(" ")
+                print("You have been blown up by a c4")
+                print("GAME OVER")
+            #What will happen if you go
+            elif looting1 == "Go":
+                print(" ")
+                print("You keep going and reach the outskirts of the city to find an abandoned airfield, as you travel inside you find a closed hangar and decide to look inside")
+                print("With the finger on the trigger you open up the tiny door to the hangar to find a dusty cessna ready to go")
+                print(" ")
+                print("As you left open the hangar doors you check around and see no one, taking the chance you hop inside the plane and start it up")
+                print("With only 2 tries it fires up like brand new")
+                print(" ")
+                print("You trail down the runway and pretend to call the tower, after lifting off you decide to fly over the city once more and fly off into the dark sky")
+                print("Congratulations! You have managed to find a plane to help you escape!")
+#This choice will give the user to try and find help, although dangerous it allows the user to control all that happens on the way
+elif choice1 == "Leave":
+    print("As you look outside the option of a vehicle narrow to just two, a 2005 Toyota Tundra souped up with a 3' lift to plow over those zombies or a 2009 Ram 2500 with a hefty v10 to go very fast!")
+    #Which vehicle they will choose
+    car_chosen = input("So what will you be taking? (Tundra, Ram)")
+    #What will happen if they choose the Tundra
+    if car_chosen == "Tundra":
+        print(" ")
+        print("Nothing should stop you now!")
+        print("The gas tank seems to be showing low, on the map it does show a gas station not too far but finding a jerry can would help aswell")
+        #Gives the option to get gas or not
+        gas_yes_no = input("Go to the station, find a jerry can (Station, Jerry)")
+        #What will happen if they go to the station
+        if gas_yes_no == "Station":
+            print(" ")
+            print("As you set off you notice how scarce fuel is and that you should cruise down hills and drive up them to save gas, to do this you put the car in neutral and allow to roll this stops the gas from entering the engine")
+            print("You reach the gas station and see 2 cars that have been left there by their owners")
+            print(" ")
+            print("After looting there cars you manage to find, a compass, a detailed map of the region, 4 water bottles, 600 dollars, 3 boxes of cereal and a milk jug")
+            print("You jump back on the highway and use the map to start your journey across the country, after cruising for around a few hundred kilometres you reach a town named Olke")
+            print(" ")
+            #Gives the option to go into the town or to countinue
+            town_highway = input("Inside is a few houses, a auto shop, 3 convience stores and a firestation. You now have the choice to turn left to head into the town or make a right and go through the highway to countinue on (Town, Highway)")
+            #What will happen if going into town
+            if town_highway == "Town":
+                print(" ")
+                print("You head inside and start to loot the town, you come out fully geared with a bullet vest, military grade helmet and a M249 machine gun, nothing should stop you now")
+                print("You see a horde of zombies and mow them down with your machine gun, nothing in your path should stop you")
+                print(" ")
+                print("You head on into the road and notice a car blockade, behind it is a crater from a bomb that was set off, the car cannot countinue and you are left to travel on foot")
+                print("As you start walking you hear a click the ground and realize you just stepped on a land mine")
+                print(" ")
+                print("You have died as a result of a land mine")
+                print("GAME OVER")
+            #What will happen if taking highway
+            elif town_highway == "Highway":
+                print(" ")
+                print("Choosing the highway was the best choice, after heading halfway through the country you feel the car start to break down, the rear suspension is starting to give out taking your advantage of height away")
+                print("The map shows a shop just up ahead so you can fix the car, the map however has a big red circle around the area, you wonder if it is a warning or if it will save you")
+                #This is the choice on whether the user will fix or not fix the issue with the car
+                fix_nofix = input("Would you like to take the risk and go fix your car or should you countinue (Fix, Dont)")
+                #What will happen if fixed
+                if fix_nofix == "Fix":
+                    print("Great choice, you fix it up in no time and keep on going, after plowing over zombies, taking the dirt roads and hills to cut time you manage to make it to the border")
+                    endgame_two()
+                #What will happen if not
+                elif fix_nofix == "Dont":
+                    print(" ")
+                    print("This may not have been the right choice but we can countinue")
+                    print("You travel and couple kilometres down the road and hear a crack, the rear ends falls right off and you are left sliding around the hill")
+                    print("The car is headed straight for the cliff, you manage to jump out at the last second as see it fall until it hits the ground, a fireball eruptes from the car and a massive explosions makes your ear drums bleed")
+                    endgame_one()
+        #If you chose the jerry here is what will happen
+        elif gas_yes_no == "Jerry":
+            print(" ")
+            print("You look around to find a jerry can and find one with 3 gallons of fuel, it isnt much but it should get you far enough")
+            #Either go underground or overground
+            road_chosen = input("While driving you notice the road splits into two paths, one leading to the tunnels and one leading to the mountians (Tunnel, Mountian")
+            #If you go under
+            if road_chosen == "Tunnel":
+                print(" ")
+                print("As you hid through the tunnels you notice a loud creaking noise, the tunnel is about to colapse with you in it")
+                print("Speeding up you reach a a speed of 85 kph and come to a turn which can only be taking at 40 kph not realizing this in time you slam against the side wall, the truck flipping over with you in it")
+                print(" ")
+                print("As you fall out of the vehicle you come to the conclusion that you are dead and cannot make it, the tunnel then colapses on you leaving you to suffocate and die")
+                print("You have died from the tunnel")
+                print(" ")
+                print("GAME OVER")
+            #If you go over
+            elif road_chosen == "Mountian":
+                print(" ")
+                print("You reach the top of the mountian and see a plane in the distance, it appears to be a emergency response plane, chances are it was stolen by the locals and is now used for exploration")
+                print("You contemplate whether you should stay put or attempt to get there attention")
+                #What to do when you spot the plane
+                plane_attack2 = input("You hear a some zombies rushing over in the distance after catching your scent, your only option are too signal or to leave it be (Signal, Defend)")
+                #If you chose to signal
+                if plane_attack2 == "Signal":
+                    print(" ")
+                    print("As you signal the plane you notice it go away and not see you, you wonder if they hadnt spotted you or dont trust you and decided to run way")
+                    print("The plane then returns and you see a helicopter in the distance, the helicopter makes a landing and greets you to hop on board")
+                    print(" ")
+                    print("Congratulations! You have been saved")
+                #If you chose to defend
+                elif plane_attack2 == "Defend":
+                    print(" ")
+                    print("The horde inching closer you whip out your weapon and start to defend the hill, the plane seeing this makes a loop around and starts to open gunfire, 3 bullets pierce your armor although not killing you your armor has been damaged")
+                    print("You see it make another turn as it comes for a second round, all the zombies have been finished but the plane opens fire again on you this time hitting you")
+                    print(" ")
+                    print("You sit there wondering if they had not noticed the horde being finished or whether they dont like friends")
+                    print("You have died from the plane after an attempted defence against zombies")
+                    print(" ")
+                    print("GAME OVER")
+    #If you choose the ram
+    elif car_chosen == "Ram":
+        print("You should be across the country in no time!")
+        #Choice to throw your gun or food out
+        food_gun = input("The space is very tight and your weapon wont fit, will you sacrifice food or your gun (Food, Gun)")
+        #If chosen to throw the food out
+        if food_gun == "Food":
+            print(" ")
+            #Choice to ditch the car or keep it
+            ditch_drive = input("You chose to throw your gun out and wonder if you should take it instead, after deciding on the food you head start to adventure and find you have two choices, either ditch the ram to go into the trails and hope to find someone or to keep going (Ditch, Drive)")
+            #If chosen to keep the car
+            if ditch_drive == "Drive":
+                #Choice to go for the sea or the border
+                border_sea = input("The map shows equal distance between a nearby dock and the border of the protective zone, will you head for the docks or the border (Docks, Border)")
+                #If chosen to go for the docks
+                if border_sea == "Docks":
+                    print(" ")
+                    print("You head towards the docks and find two different boats, a lamborghini boat capable of going across the ocean in a couple hours or a military grade gunship")
+                    #Choice to choose a fast lambo boat or a ex military gunship
+                    boats = input("So what will you choose (Lambo, Military)")
+                    #If the lambo boat is chosen
+                    if boats == "Lambo":
+                        print(" ")
+                        print("You hop inside the lambo boat and after traveling for a far distance you check your map and find your off the grid")
+                        print("You do find a map inside however that shows another dock just a few hundred kilometres up a river stream")
+                        print(" ")
+                        print("You head over there and find a small settlement of hunters, doctors and a few engineers")
+                        print("Congratulations! You have succesfully found a settlement, the lamborghini boat was stripped down and used to power a row of generators")
+                    elif boats == "Military":
+                        print("As you set off for the sea you notice a small leak in the boat, using tape and some metal you managed to patch the boat")
+                        print("The boat slowly starts to get lower and lower in the sea and you only notice when you find the water over the deck")
+                        print(" ")
+                        print("There ended up being 2 more big holes in the living quarters")
+                        print("You end jumping the edge with only a lifejacked")
+                        print(" ")
+                        print("The sharks end up picking up your scent and proceed to harass you")
+                        print("Your leg then gets bitten off and you end up bleeding to death")
+                        print(" ")
+                        print("GAME OVER")
+                #If chosen to go for the border
+                elif border_sea == "Border":
+                    endgame_two()
+            #If chosen to ditch the car 
+            elif ditch_drive == "Ditch":
+                print(" ")
+                print("You ditch the truck and decide to head down the trail, you find a fountian and decide to drink from it, while drinking you hear a gun cock and get put on your head")
+                print("You are then taking prisoner from a team of bandits and forced to head into a dangerous mine, inside you find bodies left from the previous prisoners and find that you have no choice but to try and escape")
+                print(" ")
+                print("As you try to escape 3 shots are fired and you are left to die inside")
+                print("GAME OVER")
+        #If chosen to toss your gun away
+        elif food_gun == "Gun":
+            #Forgot your vest, what choice
+            back_go = input("As you throw out the food you forget to grab your vest from the house, will you go back or countinue to travel (Back, Countinue")
+            #If chosen to go back for it
+            if back_go == "Back":
+                print(" ")
+                print("You head back to find your coat, the house lights up on fire and you hear the sound of an explosion, the gas was left running")
+                print("You are trapped and burn inside your house ending your journey")
+                print("GAME OVER")
+            #If chosen to just keep going
+            elif back_go == "Countinue":
+                print(" ")
+                print("You countinue and manage to make it across the country in half the time you anticipated")
+                print("You turn back to look at the path you cam from and the struggles you chose, and how hungry you are")
+                print(" ")
+                endgame_two()
+
+#If you did end up making it this far this took me roughly 25 hours to create, its probably a lot longer then it should have been but i hope you enjoyed.
